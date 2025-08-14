@@ -9,6 +9,7 @@ Data Warehousing (Tasks 1–3): Generated synthetic retail data using Python wit
 Data Mining (Tasks 4–6): Used the Iris dataset from scikit-learn (150 samples, 4 features, 3 species) and synthetic transactional data (30 transactions, 20 items like 'milk', 'bread'). Preprocessed Iris data is saved as Iris_preprocessed.csv.
 
 Repository Structure
+```
 Data_Mining/
 ├── Task1_Data_Preprocessing_and_Exploration/
 │   ├── Visualizations/
@@ -44,7 +45,7 @@ Data_Warehousing/
 ├── .gitignore
 ├── LICENSE
 └── README.md
-
+```
 How to Run the Code
 Requirements
 
