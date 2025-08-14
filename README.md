@@ -1,37 +1,49 @@
 # Trizah250000-DSA-2040_Practical_Exam_Trizah074
-## TRIZAH NZIOKA
-DSA 2040 US 2025 End Semester Exam Submission
-Overview
-This repository contains my submission for the DSA 2040 Practical Exam: Data Warehousing and Data Mining (US 2025), completed as of 01:17 AM EAT on August 15, 2025. The exam evaluates practical skills in data warehousing and data mining. I implemented the data warehousing section (Tasks 1–3) using synthetic retail data, including a star schema, ETL process, OLAP queries, visualization, and analysis report. For data mining, I completed all tasks (4–6) using the Iris dataset and synthetic transactional data, covering preprocessing, clustering, classification, and association rule mining. Below, I detail the datasets, how to run the code, and my self-assessment.
-Datasets
+### End Semester Project
+#### Overview
+The exam evaluates practical skills in data warehousing and data mining. I implemented the data warehousing section (Tasks 1–3) using synthetic retail data, including a star schema, ETL process, OLAP queries, visualization, and analysis report. For data mining, I completed all tasks (4–6) using the Iris dataset and synthetic transactional data, covering preprocessing, clustering, classification, and association rule mining. Below, I detail the datasets and how to run the code
+
+#### Datasets
 
 Data Warehousing (Tasks 1–3): Generated synthetic retail data using Python with Faker, mimicking the UCI "Online Retail" dataset. It has ~1000 initial rows (reduced to 47 after ETL), with columns like InvoiceNo, ProductID, Category (Electronics, Clothing, Home Decor, Toys), Quantity, UnitPrice, InvoiceDate, CustomerID, Country, and TotalSales. Used random.seed(42) for reproducibility. Files: retail_data.csv and retail_dw.db.
 Data Mining (Tasks 4–6): Used the Iris dataset from scikit-learn (150 samples, 4 features, 3 species) and synthetic transactional data (30 transactions, 20 items like 'milk', 'bread'). Preprocessed Iris data is saved as Iris_preprocessed.csv.
 
 Repository Structure
-DSA_2040_Practical_Exam_JohnDoe123/
-├── etl_retail.py              # ETL script for Task 2
-├── retail_data.csv            # Synthetic retail data
-├── retail_dw.db               # SQLite database
-├── schema.sql                 # SQL CREATE TABLE statements for Task 1
-├── olap_queries.sql           # OLAP queries for Task 3
-├── preprocessing_iris.py      # Preprocessing and exploration for Task 4
-├── clustering_iris.py         # Clustering implementation for Task 5
-├── mining_iris.py             # Classification and association rule mining for Task 6
-├── Iris_preprocessed.csv      # Preprocessed Iris data
-├── sales_by_country.png       # Visualization for Task 3
-├── schema_diagram.png         # Star schema diagram for Task 1
-├── iris_pairplot.png          # Iris pairplot for Task 4
-├── iris_heatmap.png           # Iris heatmap for Task 4
-├── iris_boxplots.png          # Iris boxplots for Task 4
-├── clusters_k3.png            # K-Means clusters (k=3) for Task 5
-├── clusters_k2.png            # K-Means clusters (k=2) for Task 5
-├── clusters_k4.png            # K-Means clusters (k=4) for Task 5
-├── elbow_curve.png            # Elbow curve for Task 5
-├── decision_tree.png          # Decision Tree visualization for Task 6
-├── images/                    # Folder for additional images
-├── report.md                  # Analysis report for Task 3
-└── README.md                  # This file
+Data_Mining/
+├── Task1_Data_Preprocessing_and_Exploration/
+│   ├── Visualizations/
+│   │   ├── iris_pairplot.png
+│   │   ├── iris_heatmap.png
+│   │   └── iris_boxplots.png
+│   ├── Iris_preprocessed.csv
+│   └── Preprocessing_iris.ipynb
+├── Task2_Clustering/
+│   ├── Visualizations/
+│   │   ├── clusters_k2.png
+│   │   ├── clusters_k3.png
+│   │   ├── clusters_k4.png
+│   │   └── elbow_curve.png
+│   └── Clustering_iris.ipynb
+├── Task3_Classification_and_Association_Rule_Mining/
+│   ├── Visualization/
+│   │   └── decision_tree.png
+│   └── mining_iris_basket.ipynb
+Data_Warehousing/
+├── Task1_Data_Warehouse_Design/
+│   ├── Retail_Schema_Diagram.png
+│   └── retail.sql
+├── Task2_ETL_Process_Implementation/
+│   ├── etl_retail.ipynb
+│   ├── retail_data.csv
+│   └── retail_dw.db
+├── Task3_OLAP_Queries_and_Analysis/
+│   ├── OLAP_Analysis.ipynb
+│   ├── OLAP_Queries.sql
+│   ├── retail_dw.db
+│   └── sales_by_country.png
+├── .gitignore
+├── LICENSE
+└── README.md
 
 How to Run the Code
 Requirements
@@ -468,13 +480,4 @@ Lift: 1.345
 
 Analysis: Decision Tree and KNN both achieved perfect scores, likely due to the small, well-separated Iris dataset. The bread -> butter rule suggests a retail strategy of bundling these items to boost sales.
 
-Self-Assessment
-I completed all tasks (100 marks):
 
-Task 1 (15/15): Designed a star schema, provided a diagram, explained the choice, and wrote SQL tables.
-Task 2 (20/20): Implemented ETL with synthetic data generation, transformation, and loading with logging.
-Task 3 (15/15): Wrote three OLAP queries, visualized the roll-up query, and provided a report.
-Task 4 (15/15): Completed preprocessing and exploration of Iris data with visualizations.
-Task 5 (15/15): Implemented K-Means clustering, evaluated with ARI, and justified k=3 with an elbow curve.
-Task 6 (20/20): Performed classification with Decision Tree and KNN, visualized the tree, and applied Apriori for association rules with analysis.
-Estimated Score: 100/100. The synthetic retail data worked well despite randomness (e.g., Liechtenstein sales), and Iris results were robust due to real data. All code was tested locally and runs error-free.
